@@ -1,0 +1,12 @@
+<view class="cu-chat">
+  <view class="cu-item {{item.who}}">
+    <view wx:if="{{item.who!='self'}}" class="cu-avatar round" style="background-image:url({{IconAI}});"></view>
+    <view class="main">
+      <view class="content bg-yellow light shadow">
+        {{item.msg}}
+      </view>
+    </view>
+    <view wx:if="{{item.who=='self'}}" class="cu-avatar round" style="background-image:url({{IconSelf}});"></view>
+    <view class="date">{{item.dateTime}}</view>
+  </view>
+</view>
