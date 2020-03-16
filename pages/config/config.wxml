@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-grey" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">用户设置</view>
+</cu-custom>
+
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title">健康钱包</view>
+		<text class="text-green text-cut">{{address}}</text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">助记串</view>
+		<input placeholder="输入自己不会忘记的字符串"></input>
+	</view>
+	
+	<ylz-picker type="single" title="baseURL" index="{{baseURLIndex}}" picker="{{baseURL}}" bind:change="_onChangeBaseURL"/>
+	
+  <view class="cu-form-group margin-top">
+		<view class="title" >验证码</view>
+		<input placeholder="输入框带个按钮"></input>
+		<button class="cu-btn bg-green shadow" bind:tap="_onTest">验证码</button>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input placeholder="输入框带标签"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+	
+  <ylz-picker type="single" title="哪一餐" index="{{index}}" picker="{{picker}}" bind:change="_onChange"/>
+  <ylz-picker type="date" title="哪一天" date="2020-03-05" bind:change="_onChange"/>
+  <ylz-picker type="region" title="城市" region="{{region}}"/>
+</form>
+
+<button class="cu-btn bg-green shadow margin" bindtap="_onNext">下一步</button>
+<ylz-steps id="steps" stepItems="{{stepItems}}"/>
